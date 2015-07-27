@@ -33,6 +33,7 @@ body,
 	position: relative;
   	top: 50%;
   	transform: translateY(-50%);
+  	text-align: right;
 }
 
 .blackArea .content .logo {
@@ -94,7 +95,7 @@ body,
 /************************************************************/
 /*		MENU												*/
 /************************************************************/
-.menu .li {
+/*.menu .li {
 	padding: 0px 0;
 	display: block;
 	height: 0.8em;
@@ -119,4 +120,59 @@ body,
 	position: relative;
 	width: 100%;
 	transform: translateY(-50%);
+}*/
+
+.li {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #464546;
+	position: relative;
+	width: 150px;
+	height: 8px;
+	margin: 8px;
+	min-width: 300px;
+	background: #888;
+	transition: all 1s;
+}
+
+.li::after {
+	padding-right: 3px;
+	top : -2px;
+	position: absolute;
+	background: white;
+}
+
+.li:hover,div.on {
+	color: blue;
+	background-color: blue;
+}
+
+#avantle20h::after{
+	content: "avant le 20h";
+}
+
+#consulting::after{
+	content: "Consulting & matière grise";
+}
+
+#infrarouge::after{
+	content: "L'expérience sous infrarouge";
+}
+
+#references::after{
+	content: "Références & ambiances réussies";
+}
+
+#presse::after{
+	content: "Presse";
+}
+
+#contact::after{
+	content: "Contact";
+}
+
+#welcome::after{
+	content: "Welcome";
 }
