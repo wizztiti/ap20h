@@ -6,7 +6,7 @@ var app = {
 	
 	clickOnLi : function(e) {
 			e.preventDefault();
-			page = $(this).attr("data-page");
+			page = $(this).attr("id");
 			if(onHome) {
 				app.animeHome();
 			} else {
