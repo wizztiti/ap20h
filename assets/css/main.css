@@ -20,7 +20,7 @@ body,
 	width: 50%;
 	height: 100%;
 	min-height: 100%;
-	background-color: #1a191c;
+	background-color: #1a171b;
 	float: left;
 
 	-webkit-transform-style: preserve-3d;
@@ -41,9 +41,9 @@ body,
 }
 
 .blackArea .menu {
-	margin-top : 220px;
 	padding-left : 0;
 	width : 100%;
+	text-align: left;
 	visibility: hidden;
 }
 
@@ -62,11 +62,11 @@ body,
 /*		ZONE BLANCHE										*/
 /************************************************************/
 .whiteArea {
+  	position: relative;
 	width: 50%;
   	height: 100%;
   	background-color: #FFF;
   	float: right;
-  	position: relative;
 }
 
 .whiteArea .content {
@@ -78,6 +78,7 @@ body,
 }
 
 .whiteArea .menu {
+	position: relative;
 	width: 300px;
 }
 
@@ -95,45 +96,20 @@ body,
 /************************************************************/
 /*		MENU												*/
 /************************************************************/
-/*.menu .li {
-	padding: 0px 0;
-	display: block;
-	height: 0.8em;
-	margin: 2px 0;
-}
 
-.menu .link {
-	padding: 0 3px;
-	position: relative;
-	z-index: 1;
+
+.li {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 0.6em;
 	text-transform: uppercase;
 	font-weight: bold;
-	color: #464546;
-}
-
-.menu .menuTrait {
-	z-index: 0;
-	margin-top: -8px;
-	height: 0.4em;
-	position: relative;
-	width: 100%;
-	transform: translateY(-50%);
-}*/
-
-.li {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 0.8em;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: #464546;
+	color: #444444;
 	position: relative;
 	width: 150px;
-	height: 8px;
-	margin: 8px;
+	height: 6px;
+	margin: 6px 0 0 0;
 	min-width: 300px;
-	background: #888;
+	background: #444444;
 	transition: all 1s;
 }
 
@@ -145,8 +121,12 @@ body,
 }
 
 .li:hover,div.on {
-	color: blue;
-	background-color: blue;
+	color: #019ad4	;
+	background-color: #019ad4;
+}
+
+.blackArea .li::after {
+	background-color: black;
 }
 
 #avantle20h::after{
