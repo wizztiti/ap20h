@@ -62,7 +62,7 @@ var app = {
 			// Le conteneur de la zone blanche se déplace à droite puis se vide
 
 			$( ".whiteArea .menu" ).animate({left: 700}, 1300, 'easeOutQuart', function() {
-					$(".whiteArea").css({left : -270}); //la zone blanche se décale à gauche
+					$(".whiteArea").css({left : -250}); //la zone blanche se décale à gauche
 					$(".blackArea .content").append( $(".whiteArea .menu") );
 				}
 			);

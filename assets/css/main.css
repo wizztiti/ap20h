@@ -13,11 +13,32 @@ body,
 }
 
 /************************************************************/
+/*		DECLARATION POLICES CARACTERES						*/
+/************************************************************/
+@font-face {
+    font-family: 'Arnopro';
+    src: url('fonts/arnoproregular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Arnopro';
+    src: url('fonts/arnoprobold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Arnopro-Caption';
+    src: url('../fonts/arnoprocaptionttf') format('truetype');
+}
+
+
+/************************************************************/
 /*		ZONE NOIRE											*/
 /************************************************************/
 .blackArea {
 	position: relative;
 	width: 50%;
+	min-width: 350px;
 	height: 100%;
 	min-height: 100%;
 	background-color: #1a171b;
@@ -63,14 +84,16 @@ body,
 /************************************************************/
 .whiteArea {
   	position: relative;
-	width: 50%;
+  	min-width: 50%;
+	max-width: 735px;
   	height: 100%;
   	background-color: #FFF;
   	float: right;
 }
 
 .whiteArea .content {
-	padding: 0 30px;
+	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
+	margin: 0 30px;
 	position: relative;
 	top: 50%;
   	transform: translateY(-50%);
@@ -99,16 +122,16 @@ body,
 
 
 .li {
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: "Arnopro", Verdana, Geneva, sans-serif;
 	font-size: 0.6em;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 600;
 	color: #444444;
 	position: relative;
 	width: 150px;
 	height: 6px;
 	margin: 6px 0 0 0;
-	min-width: 300px;
+	min-width: 288px;
 	background: #444444;
 	transition: all 1s;
 	cursor: pointer;
@@ -156,4 +179,21 @@ body,
 
 #welcome::after{
 	content: "Welcome";
+}
+
+
+/************************************************************/
+/*		CONTENT												*/
+/************************************************************/
+
+.whiteArea .content h1 {
+	font-family: Arial, Verdana, Geneva, sans-serif;
+	font-size: 1.2em;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #019ad4;
+	border-bottom: 4px solid black;
+	text-align: right;
+	margin-bottom: 25px;
+	
 }
