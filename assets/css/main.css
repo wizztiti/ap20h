@@ -111,6 +111,7 @@ body,
 	min-width: 300px;
 	background: #444444;
 	transition: all 1s;
+	cursor: pointer;
 }
 
 .li::after {

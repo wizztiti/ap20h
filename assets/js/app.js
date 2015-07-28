@@ -1,24 +1,13 @@
 var app = {
 	init: function () {
 		onHome = true;
-		// Hover sur items du menu
-		$(".menu .li").hover(function(){
-				$(this).css('cursor','pointer');
-   				$(this).children(".link").animate({color : '#009ad5'},500);
-				$(this).children(".menuTrait").animate({"background-color" : '#009ad5'},500);
- 			},function(){
-   				$(this).children(".link").css({color : '#000'});
-				$(this).children(".menuTrait").css({"background-color" : '#444'});
- 		});
-		
 		$(".menu .li").on("click", app.clickOnLi);		
 	}, // fin de init
 	
 	clickOnLi : function(e) {
 			e.preventDefault();
-			var page = $(this).find("a").attr("data-page");
+			page = $(this).attr("data-page");
 			if(onHome) {
-				app.chargePage(page);
 				app.animeHome();
 			} else {
 				app.chargePage(page);
@@ -57,14 +46,14 @@ var app = {
 					
 					$(this).animate({
 						"opacity" : 1
-					}, 500); // la zone est rendue visible
+					}, 2000); // la zone est rendue visible
 
 					$(".whiteArea .content").css({
 						left : 0
 					});
 					
 					onHome = false;
-
+					app.chargePage(page);
 					app.affichePage();
 
 				}
@@ -77,6 +66,7 @@ var app = {
 					$(".blackArea .content").append( $(".whiteArea .menu") );
 				}
 			);
+
 	}
 	
 }; // fin de app
