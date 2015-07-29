@@ -1,7 +1,8 @@
 var app = {
 	init: function () {
 		onHome = true;
-		$(".menu .li").on("click", app.clickOnLi);		
+		page = "";
+		$(".menu .li").on("click", app.clickOnLi);
 	}, // fin de init
 	
 	clickOnLi : function(e) {
@@ -12,14 +13,25 @@ var app = {
 			} else {
 				app.chargePage(page);
 			}
+			
+	},
+
+
+	reInitOnClick : function() {
+		$(".menu .li").off();
+		$(".menu .li").on("click", app.clickOnLi);
 	},
 		
 	chargePage : function(page) {
 		$(".whiteArea .content").load("pages/" + page + ".html");
+		setTimeout(function() {app.reInitOnClick();}, 0); // utilisation de setTimeout résoud bug.
 	},
 	
 	affichePage : function() {
-		$(".whiteArea .content").animate({"opacity" : 1},3000);	
+		$(".whiteArea .content").animate({"opacity" : 1},3000, function() {
+    			app.reInitOnClick();
+			}
+		);
 	},
 	
 	animeHome : function() {
@@ -55,9 +67,10 @@ var app = {
 						"margin-left": 350
 					});
 
-					$(".whiteArea .content").addClass("contentBis");
+					$(".whiteArea .content").addClass("article");
 					
 					onHome = false;
+					
 					app.chargePage(page);
 					app.affichePage();
 
