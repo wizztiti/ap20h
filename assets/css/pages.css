@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/************************************************************/
+/*		CONTENT												*/
+/************************************************************/
+
+.whiteArea .content h1 {
+	font-family: Arial, Verdana, Geneva, sans-serif;
+	font-size: 1.2em;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #019ad4;
+	border-bottom: 4px solid black;
+	text-align: right;
+	margin-bottom: 25px;
+	
+}
