@@ -24,7 +24,7 @@ var app = {
 		
 	chargePage : function(page) {
 		$(".whiteArea .content").load("pages/" + page + ".html");
-		setTimeout(function() {app.reInitOnClick();}, 0); // utilisation de setTimeout résoud bug.
+		setTimeout(function() {app.reInitOnClick();}, 10); // utilisation de setTimeout résoud bug.
 	},
 	
 	affichePage : function() {
