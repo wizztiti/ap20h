@@ -32,6 +32,7 @@
 
 .whiteArea .contentBis {
 	font-family: "Arnopro-Regular", Verdana, Geneva, sans-serif;
+	font-size: 1em;
 	line-height: 1.2;
 	font-weight: 100;
 }
@@ -39,7 +40,7 @@
 .whiteArea .content h1 {
 	font-family: Arial, Verdana, Geneva, sans-serif;
 	font-size: 1.3em;
-	font-weight: 400;
+	font-weight: 600;
 	text-transform: uppercase;
 	color: #019ad4;
 	border-bottom: 4px solid black;
