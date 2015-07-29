@@ -82,6 +82,7 @@ body,
 .whiteArea .menu {
 	position: relative;
 	width: 300px;
+	display: inline-block;
 }
 
 .whiteArea .menu .link {
