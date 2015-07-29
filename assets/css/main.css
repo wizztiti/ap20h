@@ -12,25 +12,6 @@ body,
 	padding: 0;
 }
 
-/************************************************************/
-/*		DECLARATION POLICES CARACTERES						*/
-/************************************************************/
-@font-face {
-    font-family: 'Arnopro';
-    src: url('fonts/arnoproregular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Arnopro';
-    src: url('fonts/arnoprobold.ttf') format('truetype');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: 'Arnopro-Caption';
-    src: url('../fonts/arnoprocaptionttf') format('truetype');
-}
-
 
 /************************************************************/
 /*		ZONE NOIRE											*/
@@ -85,14 +66,12 @@ body,
 .whiteArea {
   	position: relative;
   	min-width: 50%;
-	max-width: 735px;
   	height: 100%;
   	background-color: #FFF;
   	float: right;
 }
 
 .whiteArea .content {
-	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
 	margin: 0 30px;
 	position: relative;
 	top: 50%;
@@ -182,18 +161,4 @@ body,
 }
 
 
-/************************************************************/
-/*		CONTENT												*/
-/************************************************************/
 
-.whiteArea .content h1 {
-	font-family: Arial, Verdana, Geneva, sans-serif;
-	font-size: 1.2em;
-	font-weight: 400;
-	text-transform: uppercase;
-	color: #019ad4;
-	border-bottom: 4px solid black;
-	text-align: right;
-	margin-bottom: 25px;
-	
-}

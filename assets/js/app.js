@@ -48,9 +48,14 @@ var app = {
 						"opacity" : 1
 					}, 2000); // la zone est rendue visible
 
-					$(".whiteArea .content").css({
-						left : 0
+					$(".whiteArea").css({
+						position: "absolute",
+						width: 800,
+						float: "left",
+						"margin-left": 350
 					});
+
+					$(".whiteArea .content").addClass("contentBis");
 					
 					onHome = false;
 					app.chargePage(page);
@@ -62,7 +67,7 @@ var app = {
 			// Le conteneur de la zone blanche se déplace à droite puis se vide
 
 			$( ".whiteArea .menu" ).animate({left: 700}, 1300, 'easeOutQuart', function() {
-					$(".whiteArea").css({left : -250}); //la zone blanche se décale à gauche
+					/*$(".whiteArea").css({left : -250}); //la zone blanche se décale à gauche*/
 					$(".blackArea .content").append( $(".whiteArea .menu") );
 				}
 			);
