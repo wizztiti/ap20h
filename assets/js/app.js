@@ -3,7 +3,7 @@ var app = {
 		onHome = true;
 		page = "";
 		$(".menu .li").on("click", app.clickOnLi);
-	}, // fin de init
+	},
 	
 	clickOnLi : function(e) {
 			e.preventDefault();
@@ -11,9 +11,11 @@ var app = {
 			if(onHome) {
 				app.animeHome();
 			} else {
+				$(".whiteArea .content").css({
+						"opacity" : 0
+					});
 				app.chargePage(page);
 			}
-			
 	},
 
 
@@ -24,11 +26,12 @@ var app = {
 		
 	chargePage : function(page) {
 		$(".whiteArea .content").load("pages/" + page + ".html");
-		setTimeout(function() {app.reInitOnClick();}, 10); // utilisation de setTimeout résoud bug.
+		//setTimeout(function() {app.reInitOnClick();}, 10); // utilisation de setTimeout résoud bug.
+		app.affichePage();
 	},
 	
 	affichePage : function() {
-		$(".whiteArea .content").animate({"opacity" : 1},3000, function() {
+		$(".whiteArea .content").animate({"opacity" : 1},1000, function() {
     			app.reInitOnClick();
 			}
 		);
@@ -40,8 +43,6 @@ var app = {
 					
 			// La zone noire se déplace à gauche avec une leger retard sur le logo
 			$( ".blackArea").delay(300).animate({left: -512}, 1000, function() {
-
-
 					$(this).css({
 						left 	: 0, 
 						width 	: 350,
@@ -68,19 +69,17 @@ var app = {
 					});
 
 					$(".whiteArea .content").addClass("article");
-					
 					onHome = false;
-					
 					app.chargePage(page);
-					app.affichePage();
-
 				}
 			);
 					
 			// Le conteneur de la zone blanche se déplace à droite puis se vide
 
 			$( ".whiteArea .menu" ).animate({left: 700}, 1300, 'easeOutQuart', function() {
-					/*$(".whiteArea").css({left : -250}); //la zone blanche se décale à gauche*/
+					$(".whiteArea .content").css({
+						"opacity" : 0
+					});
 					$(".blackArea .content").append( $(".whiteArea .menu") );
 				}
 			);
