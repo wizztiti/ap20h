@@ -69,3 +69,26 @@
 .whiteArea .article h3 {
 	font-family: "Arnopro-SmbdCaption", Verdana, Geneva, sans-serif;
 }
+
+
+.whiteArea .article a {
+	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
+}
+
+/************************************************************/
+/*		SPECIFIQUE A PAGE 												*/
+/************************************************************/
+
+
+
+.imgInfrarouge {
+	float: left;
+	margin-right: 10px;
+	width: 137px;
+	height: auto ;
+}
+
+.imgInfrarouge:hover {
+	width: 230px;
+}
+
