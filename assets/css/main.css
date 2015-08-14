@@ -35,11 +35,18 @@ body,
 	position: relative;
   	top: 50%;
   	transform: translateY(-50%);
-  	text-align: right;
+  	float: right;
+  	width: 291px;	
 }
 
-.blackArea .content .logo {
-
+.blackArea .content p {
+	font-family: "Arnopro", Verdana, Geneva, sans-serif;
+	font-size: 0.65em;
+	font-style: italic;
+	color: #999999;
+	text-align: center;
+	margin: 7px 30px 15px;
+	opacity: 0;
 }
 
 .blackArea .menu {

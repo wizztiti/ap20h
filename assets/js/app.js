@@ -4,6 +4,7 @@ var app = {
 		document.page = "",
 		document.zoomImage = new Array(null,false,false,false,false);
 
+		$(".blackArea .content p").delay(1000).animate({"opacity" : 1},1500);
 		//$(".menu .li").on("click", app.clickOnLi);
 		app.reInitOnClick();
 	},
