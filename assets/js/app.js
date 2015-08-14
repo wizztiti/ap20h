@@ -1,8 +1,8 @@
 var app = {
 	init: function () {
-		window.onHome = true,
-		window.page = "",
-		window.zoomImage = new Array(null,false,false,false,false);
+		document.onHome = true,
+		document.page = "",
+		document.zoomImage = new Array(null,false,false,false,false);
 
 		//$(".menu .li").on("click", app.clickOnLi);
 		app.reInitOnClick();
@@ -16,26 +16,25 @@ var app = {
 	},
 
 	reInitVariablesPages : function () {
-		window.zoomImage = (null,false,false,false,false);
+		document.zoomImage = Array(null,false,false,false,false);
 	},
 	
 	clickOnLi : function(e) {
 		e.preventDefault();
-		window.page = $(this).attr("id");
-		if(window.onHome) {
+		document.page = $(this).attr("id");
+		if(document.onHome) {
 			app.animeHome();
 		} else {
 			$(".whiteArea .content").css({
 					"opacity" : 0
 				});
-			app.chargePage(window.page);
+			app.chargePage(document.page);
 		}
 	},
 		
 	chargePage : function(page) {
-		app.reInitVariablesPages;
+		app.reInitVariablesPages();
 		$(".whiteArea .content").load("pages/" + page + ".html");
-
 		//setTimeout(function() {app.reInitOnClick();}, 10); // utilisation de setTimeout résoud bug.
 		app.affichePage();
 	},
@@ -88,8 +87,8 @@ var app = {
 				});
 
 				$(".whiteArea .content").addClass("article");
-				window.onHome = false;
-				app.chargePage(window.page);
+				document.onHome = false;
+				app.chargePage(document.page);
 			}
 		);
 	},
@@ -97,13 +96,16 @@ var app = {
 	clickOnCouvInfrarouge : function() {
 		//Récupère l'id de l'image cliqué
 		var idCouv = parseInt($(this).attr("id"));
+
 		// modifie sa taille par rapport à son état précédent (zoomé ou pas)
-		if(window.zoomImage[idCouv]){
-			$(this).animate({width: 110},200);
-			window.zoomImage[idCouv] = false;
+		if(document.zoomImage[idCouv]){
+			$(this).css({width: 110});
+			$("#" +(idCouv+1)).css({display:"inline"});
+			document.zoomImage[idCouv] = false;
 		} else {
-			$(this).animate({width: 230},200);
-			window.zoomImage[idCouv] = true;
+			$(this).css({width: 230});
+			$("#" +(idCouv+1)).css({display:"none"});
+			document.zoomImage[idCouv] = true;
 		}
 	}
 
