@@ -1,31 +1,41 @@
 var app = {
 	init: function () {
-		onHome = true;
-		page = "";
+		window.onHome = true,
+		window.page = "",
+		window.zoomImage = new Array(null,false,false,false,false);
+
+		//$(".menu .li").on("click", app.clickOnLi);
+		app.reInitOnClick();
+	},
+
+	reInitOnClick : function() {  // Reinitialise les écouteurs d'évenement apres chargement d'une page.
+		$(".menu .li").off();
+		$(".infrarouge_Couverture img").off();
 		$(".menu .li").on("click", app.clickOnLi);
+		$(".infrarouge_Couverture img").on("click", app.clickOnCouvInfrarouge); // clic sur image de couverture de 
+	},
+
+	reInitVariablesPages : function () {
+		window.zoomImage = (null,false,false,false,false);
 	},
 	
 	clickOnLi : function(e) {
-			e.preventDefault();
-			page = $(this).attr("id");
-			if(onHome) {
-				app.animeHome();
-			} else {
-				$(".whiteArea .content").css({
-						"opacity" : 0
-					});
-				app.chargePage(page);
-			}
-	},
-
-
-	reInitOnClick : function() {
-		$(".menu .li").off();
-		$(".menu .li").on("click", app.clickOnLi);
+		e.preventDefault();
+		window.page = $(this).attr("id");
+		if(window.onHome) {
+			app.animeHome();
+		} else {
+			$(".whiteArea .content").css({
+					"opacity" : 0
+				});
+			app.chargePage(window.page);
+		}
 	},
 		
 	chargePage : function(page) {
+		app.reInitVariablesPages;
 		$(".whiteArea .content").load("pages/" + page + ".html");
+
 		//setTimeout(function() {app.reInitOnClick();}, 10); // utilisation de setTimeout résoud bug.
 		app.affichePage();
 	},
@@ -38,52 +48,65 @@ var app = {
 	},
 	
 	animeHome : function() {
-			// Le conteneur du logo se déplace à gauche
-			$( ".blackArea .content" ).animate({left: -291}, 1000,'easeOutQuart');
-					
-			// La zone noire se déplace à gauche avec une leger retard sur le logo
-			$( ".blackArea").delay(300).animate({left: -512}, 1000, function() {
-					$(this).css({
-						left 	: 0, 
-						width 	: 350,
-						opacity : 0
-					});
+		// Le conteneur du logo se déplace à gauche
+		$( ".blackArea .content" ).animate({left: -291}, 1000,'easeOutQuart');
+		
+		// Le conteneur de la zone blanche se déplace à droite puis se vide
+		$( ".whiteArea .menu" ).animate({left: 700}, 1300, 'easeOutQuart', function() {
+				$(".whiteArea .content").css({
+					"opacity" : 0
+				});
+				$(".blackArea .content").append( $(".whiteArea .menu") );
+			}
+		);
 
-					$( ".blackArea .content" ).css({
-						left 	: 0
-					});
+		// La zone noire se déplace à gauche avec une leger retard sur le logo
+		$( ".blackArea").delay(300).animate({left: -512}, 1000, function() {
+				$(this).css({
+					left 	: 0, 
+					width 	: 350,
+					opacity : 0
+				});
 
-					$( ".blackArea .content .menu" ).css({
-						"visibility" : "visible"
-					});
-					
-					$(this).animate({
-						"opacity" : 1
-					}, 2000); // la zone est rendue visible
+				$( ".blackArea .content" ).css({
+					left 	: 0
+				});
 
-					$(".whiteArea").css({
-						position: "absolute",
-						width: 800,
-						float: "left",
-						"margin-left": 350
-					});
+				$( ".blackArea .content .menu" ).css({
+					"visibility" : "visible"
+				});
+				
+				$(this).animate({
+					"opacity" : 1
+				}, 2000); // la zone est rendue visible
 
-					$(".whiteArea .content").addClass("article");
-					onHome = false;
-					app.chargePage(page);
-				}
-			);
-					
-			// Le conteneur de la zone blanche se déplace à droite puis se vide
+				$(".whiteArea").css({
+					position: "absolute",
+					width: 780,
+					float: "left",
+					"margin-left": 350
+				});
 
-			$( ".whiteArea .menu" ).animate({left: 700}, 1300, 'easeOutQuart', function() {
-					$(".whiteArea .content").css({
-						"opacity" : 0
-					});
-					$(".blackArea .content").append( $(".whiteArea .menu") );
-				}
-			);
-
-	}
+				$(".whiteArea .content").addClass("article");
+				window.onHome = false;
+				app.chargePage(window.page);
+			}
+		);
+	},
 	
+	clickOnCouvInfrarouge : function() {
+		//Récupère l'id de l'image cliqué
+		var idCouv = parseInt($(this).attr("id"));
+		// modifie sa taille par rapport à son état précédent (zoomé ou pas)
+		if(window.zoomImage[idCouv]){
+			$(this).animate({width: 110},200);
+			window.zoomImage[idCouv] = false;
+		} else {
+			$(this).animate({width: 230},200);
+			window.zoomImage[idCouv] = true;
+		}
+	}
+
+
+
 }; // fin de app

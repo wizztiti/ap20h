@@ -80,15 +80,33 @@
 /************************************************************/
 
 
-
-.imgInfrarouge {
+.infrarouge_Image {
 	float: left;
+}
+
+.Infrarouge_legendeImage {
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.infrarouge_Couverture img {
 	margin-right: 10px;
-	width: 137px;
+	width: 110px;
 	height: auto ;
 }
 
-.imgInfrarouge:hover {
-	width: 230px;
+.infrarouge_Couverture img:hover {
+	cursor: pointer;
+}
+
+.infrarouge_Couverture p {
+	clear: both;
+	text-align: center;
+}
+
+#infrarouge_Video {
+	width: 190px;
+	font-size: 0.9em;
+	text-align: center;
 }
 
