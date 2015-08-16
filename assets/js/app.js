@@ -87,7 +87,7 @@ var app = {
 
 				$(".whiteArea").css({
 					position: "absolute",
-					width: 780,
+					width: 760,
 					float: "left",
 					"margin-left": 350
 				});
