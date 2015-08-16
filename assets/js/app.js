@@ -1,7 +1,9 @@
 var app = {
 	init: function () {
+		document.widthScreen = $("body").outerWidth(true);
 		document.onHome = true,
 		document.page = "",
+		document.rubrique= "",
 		document.zoomImage = new Array(null,false,false,false,false);
 
 		$(".blackArea .content p").delay(1000).animate({"opacity" : 1},1500);
@@ -13,7 +15,7 @@ var app = {
 		$(".menu .li").off();
 		$(".infrarouge_Couverture img").off();
 		$(".menu .li").on("click", app.clickOnLi);
-		$(".infrarouge_Couverture img").on("click", app.clickOnCouvInfrarouge); // clic sur image de couverture de 
+		$(".infrarouge_Couverture img").on("click", app.clickOnCouvInfrarouge); // clic sur image de couverture
 	},
 
 	reInitVariablesPages : function () {
@@ -23,6 +25,9 @@ var app = {
 	clickOnLi : function(e) {
 		e.preventDefault();
 		document.page = $(this).attr("id");
+		document.rubrique = $(this).attr("class").slice(3);
+		$(".menu .li").css({color: "#444444", "background-color": "#444444"}); // les li du menu reprennent leur color initiale.
+		
 		if(document.onHome) {
 			app.animeHome();
 		} else {
@@ -45,6 +50,7 @@ var app = {
     			app.reInitOnClick();
 			}
 		);
+		$("#"+document.rubrique).css({color: "#019ad4", "background-color": "#019ad4"}); // le menu sélectionner garde sa couleur.
 	},
 	
 	animeHome : function() {
@@ -61,7 +67,7 @@ var app = {
 		);
 
 		// La zone noire se déplace à gauche avec une leger retard sur le logo
-		$( ".blackArea").delay(300).animate({left: -512}, 1000, function() {
+		$( ".blackArea").delay(300).animate({left: -(document.widthScreen / 2)}, 1000, function() {
 				$(this).css({
 					left 	: 0, 
 					width 	: 350,
