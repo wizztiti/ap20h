@@ -24,9 +24,9 @@ var app = {
 	
 	clickOnLi : function(e) {
 		e.preventDefault();
+		$("#"+document.rubrique).css({color: "#444444", "background-color": "#444444"}); // les li du menu reprennent leur color initiale.
 		document.page = $(this).attr("id");
 		document.rubrique = $(this).attr("class").slice(3);
-		$(".menu .li").css({color: "#444444", "background-color": "#444444"}); // les li du menu reprennent leur color initiale.
 		
 		if(document.onHome) {
 			app.animeHome();
@@ -49,7 +49,7 @@ var app = {
     			app.reInitOnClick();
 			}
 		);
-		$("#"+document.rubrique).css({color: "#019ad4", "background-color": "#019ad4"}); // le menu sélectionner garde sa couleur.
+		$("#"+document.rubrique).css({color: "#019ad4", "background-color": "#019ad4"}); // le menu sélectionné garde sa couleur.
 	},
 	
 	animeHome : function() {
