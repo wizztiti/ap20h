@@ -31,10 +31,9 @@ var app = {
 		if(document.onHome) {
 			app.animeHome();
 		} else {
-			$(".whiteArea .content").css({
-					"opacity" : 0
+			$(".whiteArea .content").animate({"opacity" : 0},500, function () {
+					app.chargePage(document.page);
 				});
-			app.chargePage(document.page);
 		}
 	},
 		
@@ -46,7 +45,7 @@ var app = {
 	},
 	
 	affichePage : function() {
-		$(".whiteArea .content").animate({"opacity" : 1},1000, function() {
+		$(".whiteArea .content").delay(500).animate({"opacity" : 1},500, function() {
     			app.reInitOnClick();
 			}
 		);
