@@ -21,12 +21,12 @@
 
 @font-face {
     font-family: 'Arnopro-Bold-Caption';
-    src: url('fonts/arnoproboldcaption') format('truetype');
+    src: url('../fonts/arnoproboldcaption') format('truetype');
 }
 
 @font-face {
     font-family: 'Arnopro-SmbdCaption';
-    src: url('fonts/ArnoPro-SmbdCaption.ttf') format('truetype');
+    src: url('../fonts/ArnoPro-SmbdCaption.ttf') format('truetype');
 }
 
 
@@ -63,7 +63,7 @@
 .whiteArea .article h2 {
 	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
 	font-size: 1.2em;
-	padding:  6px 0 0 0;
+	margin:  6px 0 0 0;
 }
 
 .whiteArea .article h3 {
@@ -104,13 +104,13 @@
 	text-align: center;
 }
 
-#infrarouge_Video {
+.infrarouge_Video {
 	width: 190px;
 	font-size: 0.9em;
 	text-align: center;
 }
 
 #div_infrarouge_Couverture {
-	height: 190px;
+	height: 130px;
 }
 

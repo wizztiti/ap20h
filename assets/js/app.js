@@ -96,15 +96,17 @@ var app = {
 	
 	clickOnCouvInfrarouge : function() {
 		//Récupère l'id de l'image cliqué
-		var idCouv = parseInt($(this).attr("id"));
+		var idCouv = parseInt($(this).parent().attr("id"));
 
 		// modifie sa taille par rapport à son état précédent (zoomé ou pas)
 		if(document.zoomImage[idCouv]){
 			$(this).css({width: 110});
+			$("#div_infrarouge_Couverture").css({height: 130})
 			$("#" +(idCouv+1)).css({display:"inline"});
 			document.zoomImage[idCouv] = false;
 		} else {
 			$(this).css({width: 230});
+			$("#div_infrarouge_Couverture").css({height: 200})
 			$("#" +(idCouv+1)).css({display:"none"});
 			document.zoomImage[idCouv] = true;
 		}
