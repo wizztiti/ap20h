@@ -99,6 +99,10 @@ a:hover {
   	text-align: left;
 }
 
+.whiteArea .content p {
+	margin-bottom: 15px;
+}
+
 .whiteArea .menu {
 	position: relative;
 	display: inline-block;

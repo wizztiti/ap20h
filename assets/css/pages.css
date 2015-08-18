@@ -56,7 +56,7 @@
 	color: #019ad4;
 	border-bottom: 4px solid black;
 	text-align: right;
-	margin-bottom: 28px;
+	margin-bottom: 22px;
 }
 
 .whiteArea .article h2 {
@@ -73,7 +73,7 @@
 
 .whiteArea .article a {
 	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
-	/*line-height: 2.7;*/
+	font-weight: 600;
 }
 
 /************************************************************/
@@ -92,7 +92,6 @@
 }
 
 .infrarouge_Couverture img {
-	margin-right: 10px;
 	width: 110px;
 	height: auto ;
 }
@@ -107,6 +106,7 @@
 
 #div_infrarouge_Couverture {
 	height: 130px;
+	margin-top: 15px;
 }
 
 
@@ -171,4 +171,24 @@
 #welcome_atmospheres_images img {
 	padding-left: 10px;
 	padding-bottom: 10px;
+}
+
+
+
+#welcome_infrarouge_texte {
+	width: 332px;
+	float: left;
+	padding-right: 10px;
+}
+
+#welcome_infrarouge_images {
+	float: right;
+	width: 220px;
+}
+
+
+
+.welcome_consultingfields_image {
+	float: left;
+    margin-right: 5px;
 }
