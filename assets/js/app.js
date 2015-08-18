@@ -100,23 +100,36 @@ var app = {
 	},
 	
 	clickOnCouvInfrarouge : function() {
-		//Récupère l'id de l'image cliqué
 		var idCouv = parseInt($(this).parent().attr("id"));
+		//alert(document.zoomImage);
 
-		// modifie sa taille par rapport à son état précédent (zoomé ou pas)
-		if(document.zoomImage[idCouv]){
-			$(this).css({width: 110});
-			$("#div_infrarouge_Couverture").css({height: 130})
-			$("#" +(idCouv+1)).css({display:"inline"});
-			document.zoomImage[idCouv] = false;
-		} else {
-			$(this).css({width: 230});
-			$("#div_infrarouge_Couverture").css({height: 200})
-			$("#" +(idCouv+1)).css({display:"none"});
-			document.zoomImage[idCouv] = true;
+		if(document.page == "infrarouge") { // code pour la page infrarouge
+
+			if(document.zoomImage[idCouv]){
+				$(this).css({width: 110});
+			} else {
+				$(this).css({width: 230});
+			}
+			document.zoomImage[idCouv] = !document.zoomImage[idCouv];
+			
+			if(document.zoomImage[1] || document.zoomImage[2] || document.zoomImage[3] || document.zoomImage[4]) {
+				$("#div_infrarouge_Couverture").css({height: 200});
+			} else {
+				$("#div_infrarouge_Couverture").css({height: 130});
+			}
+
+		} else {							// code pour la page welcome
+
+			if(document.zoomImage[idCouv]){
+				$(this).css({width: 110});
+				$(".infrarouge_Couverture").not("#"+idCouv).css({display:"inline"});
+			} else {
+				$(this).css({width: 230});
+				$(".infrarouge_Couverture").not("#"+idCouv).css({display:"none"});
+			}
+			document.zoomImage[idCouv] = !document.zoomImage[idCouv];
 		}
-	}
-
-
+		
+	},
 
 }; // fin de app

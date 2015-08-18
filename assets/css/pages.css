@@ -81,8 +81,8 @@
 /************************************************************/
 
 
-.infrarouge_Image {
-	float: left;
+#div_infrarouge_Couverture .infrarouge_Image {
+	position: absolute;
 }
 
 .legendeImage {
@@ -183,7 +183,13 @@
 
 #welcome_infrarouge_images {
 	float: right;
-	width: 220px;
+	width: 243px;
+}
+
+#welcome_infrarouge_images img {
+	float: right;
+	margin-left: 11px;
+    margin-bottom: 13px;
 }
 
 
