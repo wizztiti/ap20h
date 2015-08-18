@@ -56,22 +56,24 @@
 	color: #019ad4;
 	border-bottom: 4px solid black;
 	text-align: right;
-	margin-bottom: 25px;
+	margin-bottom: 28px;
 }
 
 .whiteArea .article h2 {
 	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
 	font-size: 1.2em;
-	margin:  6px 0 0 0;
+	margin:  7px 0 0 0;
 }
 
 .whiteArea .article h3 {
 	font-family: "Arnopro-SmbdCaption", Verdana, Geneva, sans-serif;
+	margin-top: 13px;
 }
 
 
 .whiteArea .article a {
 	font-family: "Arnopro-Caption", Verdana, Geneva, sans-serif;
+	/*line-height: 2.7;*/
 }
 
 /************************************************************/
@@ -111,7 +113,7 @@
 
 
 #references_entreamis_texte {
-	width: 276px;
+	width: 283px;
     float: left;
     padding-right: 10px;
 }
@@ -149,6 +151,24 @@
 }
 
 #references_aperitivo_images img {
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+#welcome_atmosphere_texte {
+	width: 422px;
+	float: left;
+	padding-right: 10px;
+}
+
+#welcome_atmosphere_images {
+	float: right;
+	width: 276px;
+}
+
+#welcome_atmospheres_images img {
 	padding-left: 10px;
 	padding-bottom: 10px;
 }
