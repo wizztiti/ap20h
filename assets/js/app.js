@@ -85,6 +85,8 @@ var app = {
 					"opacity" : 1
 				}, 2000); // la zone est rendue visible
 
+				$(this).css({position: "fixed"});
+
 				$(".whiteArea").css({
 					position: "absolute",
 					width: 765,
