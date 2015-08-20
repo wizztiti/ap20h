@@ -11,6 +11,12 @@
 	font-weight: 100;
 }
 
+.whiteArea .article::after {  /* Fix pour que la Div aie la taille de son contenu    */
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .article .li{
 	font-size: 0.7em;
 	font-weight: 600;
