@@ -27,6 +27,41 @@ a:hover {
 }
 
 /************************************************************/
+/*		DECLARATION POLICES CARACTERES						*/
+/************************************************************/
+@font-face {
+    font-family: 'ArnoPro-Regular';
+    src: url('../fonts/ArnoPro-Regular.woff') format('woff'),
+    	 url('../fonts/ArnoPro-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ArnoPro-Bold';
+    src: url('../fonts/ArnoPro-Bold.woff') format('woff'),
+    	 url('../fonts/ArnoPro-Bold.otf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ArnoPro-Caption';
+    src: url('../fonts/ArnoPro-Caption.woff') format('woff'),
+    	 url('../fonts/ArnoPro-Caption.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ArnoPro-BoldCaption';
+    src: url('../fonts/ArnoPro-BoldCaption.woff') format('woff'),
+    	 url('../fonts/ArnoPro-BoldCaption.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ArnoPro-SmbdCaption';
+    src: url('../fonts/ArnoPro-SmbdCaption.woff') format('woff'),
+    	 url('../fonts/ArnoPro-SmbdCaption.otf') format('truetype');
+}
+
+
+/************************************************************/
 /*		ZONE NOIRE											*/
 /************************************************************/
 .blackArea {
@@ -131,12 +166,12 @@ a:hover {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: #444444;
+	background-color: #444444;
 	position: relative;
 	/*width: 150px;
 	min-width: 288px;*/
 	height: 6px;
 	margin: 6px 0 0 0;
-	background: #444444;
 	transition: all 1s;
 	cursor: pointer;
 }

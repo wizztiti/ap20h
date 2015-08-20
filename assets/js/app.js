@@ -111,7 +111,7 @@ var app = {
 				$(this).css({width: 230});
 			}
 			document.zoomImage[idCouv] = !document.zoomImage[idCouv];
-			
+
 			if(document.zoomImage[1] || document.zoomImage[2] || document.zoomImage[3] || document.zoomImage[4]) {
 				$("#div_infrarouge_Couverture").css({height: 200});
 			} else {
